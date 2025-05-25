@@ -1,0 +1,23 @@
+{
+  "name": "racing-game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emaaanbutt/RacingGame.git"
+  },
+  "author": "Eman B.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emaaanbutt/RacingGame/issues"
+  },
+  "homepage": "https://github.com/emaaanbutt/RacingGame#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
