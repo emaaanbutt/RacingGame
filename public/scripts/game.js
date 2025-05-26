@@ -3,18 +3,19 @@ class Car{
         this.x = x;
         this.y = y;
         this.angle = angle;
-        this.speed = 2;
+        this.speed = 5;
     }
 
-    moveForward(){
-        this.x += this.speed * Math.cos(this.angle * Math.PI / 180);
-        this.y += this.speed * Math.sin(this.angle * Math.PI / 180);
+     moveForward(){
+        this.x += this.speed * Math.sin(this.angle * Math.PI / 180);
+        this.y -= this.speed * Math.cos(this.angle * Math.PI / 180);
     }
 
     moveBack(){
-        this.x -= this.speed * Math.cos(this.angle * Math.PI / 180);
-        this.y -= this.speed * Math.sin(this.angle * Math.PI / 180);
+        this.x -= this.speed * Math.sin(this.angle * Math.PI / 180);
+        this.y += this.speed * Math.cos(this.angle * Math.PI / 180);
     }
+
 
     turnLeft(){
         this.angle = this.angle - 5;
