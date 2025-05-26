@@ -7,11 +7,13 @@ class Car{
     }
 
     moveForward(){
-        this.x += this.speed * cos(this.angle);
+        this.x += this.speed * Math.cos(this.angle * Math.PI / 180);
+        this.y += this.speed * Math.sin(this.angle * Math.PI / 180);
     }
 
     moveBack(){
-        this.x += this.speed * sin(this.angle);
+        this.x -= this.speed * Math.cos(this.angle * Math.PI / 180);
+        this.y -= this.speed * Math.sin(this.angle * Math.PI / 180);
     }
 
     turnLeft(){
@@ -23,10 +25,39 @@ class Car{
     }
 
     update(){
+        let car = $(".car-img");
 
+        car.css({
+        top: this.y + 'px',
+        left: this.x + 'px',
+        transform: `rotate(${this.angle}deg)`
+    });
     }
 }
 
 $(function(){
-    let car = $()
+    let myCar = new Car(100,100,0);
+
+    $(document).keydown(function(e){
+        if (e.key ==='w' || e.key === 'ArrowUp'){
+            myCar.moveForward();
+        }
+
+         if (e.key ==='s' || e.key === 'ArrowDown'){
+            myCar.moveBack();
+        }
+
+         if (e.key ==='a' || e.key === 'ArrowLeft'){
+            myCar.turnLeft();
+        }
+
+         if (e.key ==='d' || e.key === 'ArrowRight'){
+            myCar.turnRight();
+        }
+
+        myCar.update();
+
+    });
+
+
 });
