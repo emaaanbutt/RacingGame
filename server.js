@@ -6,6 +6,10 @@ let server = express();
 server.use(express.static("public"));
 server.set("view engine", "ejs");
 
+server.get("/", (req, res)=>{
+    res.render("game");
+});
+
 server.listen(port, ()=>{
     console.log("Server listening at port ", port);
 });
