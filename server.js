@@ -7,6 +7,10 @@ server.use(express.static("public"));
 server.set("view engine", "ejs");
 
 server.get("/", (req, res)=>{
+    res.render("index");
+});
+
+server.get("/game", (req, res)=>{
     res.render("game");
 });
 
